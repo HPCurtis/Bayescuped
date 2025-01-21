@@ -21,18 +21,13 @@ bayes_fit <- mod_lm$sample(
   chains = 4
 )
 
-print(bayes_fit$summary())
-
 datacuped_list <- list(N = nrow(d), treatment = d$ad_campaign, y_pre = d$revenue0, y_post = d$revenue1)
 bayescuped_fit <- mod_cuped$sample(
   data = datacuped_list,
   chains = 4
 )
 
-print(bayescuped_fit$summary())
-
 theta_mean = round(mean(bayescuped_fit$draws("theta")), 1)
-
 
 data_sensitivity_list <- list(N = nrow(d), treatment = d$ad_campaign,
                               y_pre = d$revenue0, y_post = d$revenue1, theta = theta_mean)
@@ -42,4 +37,13 @@ bayescuped_s_fit <- mod_cuped_s$sample(
   chains = 4
 )
 
-print(bayescuped_s_fit$summary())
+# Print out the model summary
+v_mods <- list(
+  "Summary for Bayesain Regression model" = bayes_fit,
+  "Summary for Bayesian Cuped model" = bayescuped_fit,
+  "Summary for Bayesian Cuped sesitivity test" = bayescuped_s_fit
+)
+for (name in names(v_mods)) {
+  cat(name, "\n")  # Print the associated message
+  summary_print(v_mods[[name]])  # Call the function for the model
+}
