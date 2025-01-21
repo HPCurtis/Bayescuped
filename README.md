@@ -4,7 +4,7 @@ The following repo is small R based analysis proeject heavily inspired by [Matte
 
 From both the standardly applied Ordinary least square methods and a Bayesian CUPED model implmented using the Stan probabalistic progaming language.
 
-The analysis example here is a based around a simulated data set for Marektin gcompaniy running an ad campaign and wanting to run A/B test to estimate the impact of the ad campaign on comapny revenue. The big differnced here is that here in tehnsimualted example that with have observed users revenue in the treatment (Served the ad) and the control (not ad campain) pre-exposure.  
+The analysis example here is a based around a simulated data set for Marketing company running an ad campaign and wanting to run A/B test to estimate the impact of the ad campaign on company revenue. The big difference here in this simulated example that with have observed users revenue in the treatment (Served the ad) and the control (not ad campain) pre-exposure.  
 
 ![plot](visualisations/revenues.png)
 
