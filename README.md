@@ -1,6 +1,6 @@
 # Bayesian CUPED
 
-The following repo is small R based analysis proeject heavily inspired by [matteo courthoud](https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb) and [Juan Orduz](https://juanitorduz.github.io/bayesian_cuped/). Specifically here is demonstration of the value of the causal inference method of CUPED (Controlled-Experiment using Pre-Experiment Data) that is finding paricular use in industry enviroments Xie & Aurisset (2016).
+The following repo is small R based analysis proeject heavily inspired by [Matteo Courthoud](https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb) and [Juan Orduz](https://juanitorduz.github.io/bayesian_cuped/). Specifically here is demonstration of the value of the causal inference method of CUPED (Controlled-Experiment using Pre-Experiment Data) that is finding paricular use in industry enviroments Xie & Aurisset (2016).
 
 From both the standardly applied Ordinary least square methods and a Bayesian CUPED model implmented using the Stan probabalistic progaming language.
 
