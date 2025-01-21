@@ -22,3 +22,7 @@ generate_data <- function(alpha = 5, beta = 0, gamma = 3, delta = 2, n = 100,
   
   return(data)
 }
+
+summary_print<- function(sm){
+  print(sm$summary())
+}
