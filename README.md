@@ -6,6 +6,8 @@ From both the standardly applied Ordinary least square methods and a Bayesian CU
 
 The analysis example here is a based around a simulated data set for Marektin gcompaniy running an ad campaign and wanting to run A/B test to estimate the impact of the ad campaign on comapny revenue. The big differnced here is that here in tehnsimualted example that with have observed users revenue in the treatment (Served the ad) and the control (not ad campain) pre-exposure.  
 
+![plot](visualisations/revenues.png)
+
 # Standard model (OLS)
 ```{r}
 d <- generate_data
