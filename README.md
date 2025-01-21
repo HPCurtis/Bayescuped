@@ -1,1 +1,22 @@
-Bayes Cuped
+# Bayesian Cuped
+
+The following repo is small R based analysis proeject heavily inspired by [matteo courthoud](https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb) and [Juan Orduz](https://juanitorduz.github.io/bayesian_cuped/). Specifically here is demonstration of the value of the causal inference method of CUPED (Controlled-Experiment using Pre-Experiment Data) using both the standardly applied Ordinary least square methods and a Bayesian CUPED model implmented using the Stan probabalistic progaming language.
+
+The analysis example here is a based around a simulated data set for Marektin gcompaniy running an ad campaign and wanting to run A/B test to estimate the impact of the ad campaign on comapny revenue. The big differnced here is that here in tehnsimualted example that with have observed users revenue in the treatment (Served the ad) and the control (not ad campain) pre-exposure.  
+
+# Standard model (OLS)
+```{r}
+d <- generate_data
+
+# Statistical calculations. ----
+diff_mean <- mean(d[d$ad_campaign==1,"revenue1" ]) - mean(d[d$ad_campaign==0,"revenue1" ])  
+diff_mean
+
+# The same can be achieved using ols lnear model.
+ols_fit <- lm(revenue1 ~ ad_campaign ,data = d)
+summary(ols_fit)
+```
+
+
+# References
+Deng, A., Xu, Y., Kohavi, R., & Walker, T. (2013, February). Improving the sensitivity of online controlled experiments by utilizing pre-experiment data. In Proceedings of the sixth ACM international conference on Web search and data mining (pp. 123-132).
