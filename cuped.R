@@ -1,7 +1,8 @@
 # Load project code. ----
 source("utils.R")
 
-d <- generate_data
+d <- generate_data()
+
 # Statistical calculations. ----
 diff_mean <- mean(d[d$ad_campaign==1,"revenue1" ]) - mean(d[d$ad_campaign==0,"revenue1" ])  
 diff_mean
@@ -10,5 +11,3 @@ diff_mean
 # Model matrix
 ols_fit <- lm(revenue1 ~ ad_campaign ,data = d)
 summary(ols_fit)
-
-dm = model.matrix(ols_fit)
