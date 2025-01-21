@@ -26,3 +26,7 @@ generate_data <- function(alpha = 5, beta = 0, gamma = 3, delta = 2, n = 100,
 summary_print<- function(sm){
   print(sm$summary())
 }
+
+percent_diff <- function(high_value, low_value) {
+  ((high_value - low_value) / high_value) * 100
+}
