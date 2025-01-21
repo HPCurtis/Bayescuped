@@ -16,7 +16,6 @@ parameters {
   real<lower=0> sigma_cuped;
 }
 transformed parameters{
-  
   vector[N] mu_theta = intercept_target + theta * y_pre;
   vector[N] y_cuped = y_post - theta * (y_pre - m_ypre);
 }
