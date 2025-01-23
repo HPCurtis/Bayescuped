@@ -11,7 +11,7 @@ diff_mean
 ols_fit <- lm(revenue1 ~ ad_campaign, data = d)
 ols_summ <-summary(ols_fit)
 
-#CUPED estimator
+# CUPED estimator
 theta <- lm(revenue1 ~ revenue0, data = d)
 theta <- theta$coefficients[2]
 
