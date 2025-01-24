@@ -18,6 +18,7 @@ parameters {
 }
 transformed parameters{
   vector[N] mu_theta = intercept_target + theta * y_pre;
+  vector[N] y_cuped = y_post - theta * (y_pre - m_ypre);
 }
 model {
   
@@ -29,7 +30,6 @@ model {
   beta_cuped ~ normal(0, 3) ;
   sigma_cuped ~ cauchy(0, 2);
   
-  vector[N] y_cuped = y_post - theta * (y_pre - m_ypre);
   
   y_post ~ normal(mu_theta, sigma_theta);
   y_cuped ~ normal(intercept_cuped + beta_cuped * treatment, sigma_cuped);
