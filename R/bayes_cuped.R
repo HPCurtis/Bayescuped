@@ -2,18 +2,18 @@
 source("utils.R")
 
 # Libraries ----
-library(patchwork)
 library(cmdstanr)
 
+# Parrelise chains. 
 options(mc.cores = parallel::detectCores())
 
 d <- generate_data()
 dm <- model.matrix(revenue1 ~ ad_campaign, data = d) 
   
 # Compile the Stan models. 
-mod_lm <- cmdstan_model(stan_file = "stan/lm.stan")
-mod_cuped <- cmdstan_model(stan_file = "stan/cuped.stan")
-mod_cuped_s <- cmdstan_model(stan_file = "stan/cuped_sensitivity.stan")
+mod_lm <- cmdstan_model(stan_file = "../stan/lm.stan")
+mod_cuped <- cmdstan_model(stan_file = "../stan/cuped.stan")
+mod_cuped_s <- cmdstan_model(stan_file = "../stan/cuped_sensitivity.stan")
 
 datalm_list <- list(N = nrow(d), K=ncol(dm),x = dm, y = d$revenue1)
 bayes_fit <- mod_lm$sample(
