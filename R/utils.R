@@ -1,3 +1,4 @@
+# Simulation fucntion for CUPED data analysis.
 generate_data <- function(alpha = 5, beta = 0, gamma = 3, delta = 2, n = 100, 
                           seed = 42) {
   set.seed(seed)
@@ -12,7 +13,7 @@ generate_data <- function(alpha = 5, beta = 0, gamma = 3, delta = 2, n = 100,
   y0 <- alpha + beta * d + rnorm(n, mean = 0, sd = 1)
   y1 <- y0 + gamma + delta * d + rnorm(n, mean = 0, sd = 1)
   
-  # Create the data frame
+  # Create the data frame.
   data <- data.frame(
     individual = individual,
     ad_campaign = d,
@@ -24,13 +25,15 @@ generate_data <- function(alpha = 5, beta = 0, gamma = 3, delta = 2, n = 100,
 }
   
 summary_print<- function(sm){
+  # Print summary for parameter result for Stan Model fit.
   print(sm$summary())
 }
 
 percent_diff <- function(high_value, low_value) {
   ((high_value - low_value) / high_value) * 100
 }
-N <- 100
+
+# Non Functioning SBC code needs to be factored out into seperate project.
 sbc_data_generator <- function(N) {
 
   # Generate data based on the prior distributions
