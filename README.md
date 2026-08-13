@@ -1,10 +1,10 @@
 # Bayesian CUPED
 
-The following repo is small R based analysis proeject heavily inspired by [Matteo Courthoud](https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb) and [Juan Orduz](https://juanitorduz.github.io/bayesian_cuped/). Specifically here is demonstration of the value of the causal inference method of CUPED (Controlled-Experiment using Pre-Experiment Data) that is finding paricular use in industry enviroments Xie & Aurisset (2016).
+The following repo is a small R based analysis project heavily inspired by [Matteo Courthoud](https://github.com/matteocourthoud/Blog-Posts/blob/main/notebooks/cuped.ipynb) and [Juan Orduz](https://juanitorduz.github.io/bayesian_cuped/). It is a demonstration of the value of the causal inference method of CUPED (Controlled-Experiment using Pre-Experiment Data). A method which is finding particular use in industry (Xie & Aurisset, 2016).
 
-From both the standardly applied Ordinary Least Square methods and a Bayesian CUPED model implemented using the Stan probabalistic progamming language (Carpenter et al, 2017).
+Both the standardly applied Ordinary Least Square methods and a Bayesian CUPED model implemented using the Stan probabilistic progamming language (Carpenter et al, 2017).
 
-The analysis example here is a based around a simulated data set for Marketing company running an ad campaign and wanting to run A/B test to estimate the impact of the ad campaign on company revenue. The big difference here in this simulated example is that we have observed the  users revenue in the treatment (Served the ad) and the control (not ad campaign) pre-exposure.  
+The analysis example here is a based around a simulated data set of a Marketing company running an ad campaign and wanting to run an A/B test to estimate the impact of the ad campaign on company revenue. The big difference here in this simulated example is that we have observed the users revenue in the treatment (served the ad) and the control (not served the ad campaign) pre-exposure.  
 
 ![plot](visualisations/revenues.png)
 
